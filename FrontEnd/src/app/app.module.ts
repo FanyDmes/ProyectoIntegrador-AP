@@ -8,6 +8,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import { HomeComponent } from './components/home/home.component';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LogoAPComponent} from './components/logo-ap/logo-ap.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     BannerComponent,
     HomeComponent,
     AcercaDeComponent,
-    
+    LogoAPComponent
+  
   ],
   imports: [
     BrowserModule,
