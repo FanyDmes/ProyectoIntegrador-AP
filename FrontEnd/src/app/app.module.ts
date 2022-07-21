@@ -10,6 +10,7 @@ import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LogoAPComponent} from './components/logo-ap/logo-ap.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EducacionComponent } from './components/educacion/educacion.component';
     HomeComponent,
     AcercaDeComponent,
     LogoAPComponent,
-    EducacionComponent
+    EducacionComponent,
+    LoginComponent
   
   ],
   imports: [
