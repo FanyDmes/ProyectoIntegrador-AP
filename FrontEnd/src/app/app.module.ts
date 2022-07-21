@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LogoAPComponent} from './components/logo-ap/logo-ap.component';
+import { EducacionComponent } from './components/educacion/educacion.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LogoAPComponent} from './components/logo-ap/logo-ap.component';
     BannerComponent,
     HomeComponent,
     AcercaDeComponent,
-    LogoAPComponent
+    LogoAPComponent,
+    EducacionComponent
   
   ],
   imports: [
