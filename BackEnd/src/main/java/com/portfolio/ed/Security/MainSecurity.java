@@ -1,12 +1,10 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package com.portfolio.ed.Security;
 
-import com.portfolio.ed.Security.Service.UserDetailsImpl;
-import com.portfolio.ed.Security.jwt.JwtEntryPoint;
-import com.portfolio.ed.Security.jwt.JwtTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,46 +19,59 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.portfolio.ed.Security.Service.UserDetailsImpl;
+import com.portfolio.ed.Security.jwt.JwtEntryPoint;
+import com.portfolio.ed.Security.jwt.JwtTokenFilter;
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-public class MainSecurity extends WebSecurityConfigurerAdapter {
+public class MainSecurity extends WebSecurityConfigurerAdapter{
     @Autowired
     UserDetailsImpl userDetailsServicesImpl;
+    
     @Autowired
     JwtEntryPoint jwtEntryPoint;
     
     @Bean
-    public JwtTokenFilter jwtTokenFilter() {
+    public JwtTokenFilter jwtTokenFilter(){
         return new JwtTokenFilter();
     }
-@Bean
-public PasswordEncoder passwordEncoder(){
-    return new BCryptPasswordEncoder();
     
-}
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.cors().and().csrf().disable().authorizeHttpRequests().antMatchers("/auth/**").permitAll().anyRequest().authenticated().and().exceptionHandling().authenticationEntryPoint(jwtEntryPoint).and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+        http.cors().and().csrf().disable()
+                .authorizeRequests()
+                .antMatchers("**").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .exceptionHandling().authenticationEntryPoint(jwtEntryPoint)
+                .and()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);           
     }
 
     @Override
     protected AuthenticationManager authenticationManager() throws Exception {
         return super.authenticationManager();
     }
+    
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean(); 
+        return super.authenticationManagerBean();
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-      auth.userDetailsService(userDetailsServicesImpl).passwordEncoder(passwordEncoder());
+       auth.userDetailsService(userDetailsServicesImpl).passwordEncoder(passwordEncoder());
     }
-
-
+    
+    
+    
 }
-

@@ -1,31 +1,33 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package com.portfolio.ed.Security.Dto;
 
 import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 
-
+/**
+ *
+ * @author Usuario
+ */
 public class JwtDto {
     private String token;
     private String bearer = "Bearer";
-    private String nombreusuario;
+    private String nombreUsuario;
     private Collection<? extends GrantedAuthority> authorities;
     
     //Constructor
 
-    public JwtDto(String token, String nombreusuario, Collection<? extends GrantedAuthority> authorities) {
+    public JwtDto(String token, String nombreUsuario, Collection<? extends GrantedAuthority> authorities) {
         this.token = token;
-        this.nombreusuario = nombreusuario;
+        this.nombreUsuario = nombreUsuario;
         this.authorities = authorities;
-        
-     }
+    }
     
-    //Getter y Setter
-    
-    
+    //Getters and Setters
+
     public String getToken() {
         return token;
     }
@@ -42,12 +44,12 @@ public class JwtDto {
         this.bearer = bearer;
     }
 
-    public String getNombreusuario() {
-        return nombreusuario;
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
-    public void setNombreusuario(String nombreusuario) {
-        this.nombreusuario = nombreusuario;
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -57,7 +59,5 @@ public class JwtDto {
     public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
         this.authorities = authorities;
     }
-    
-    
     
 }

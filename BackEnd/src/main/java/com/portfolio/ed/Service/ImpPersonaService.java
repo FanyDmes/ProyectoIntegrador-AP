@@ -1,25 +1,27 @@
+
 package com.portfolio.ed.Service;
 
-import com.portfolio.ed.Entity.Persona;
-import com.portfolio.ed.Interface.IPersonaService;
-import com.portfolio.ed.Repository.IPersonaRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.portfolio.ed.Entity.Persona;
+import com.portfolio.ed.Interface.IPersonaService;
+import com.portfolio.ed.Repository.IPersonaRepository;
+
 @Service
 public class ImpPersonaService implements IPersonaService{
-     @Autowired IPersonaRepository ipersonaRepository;
-
+    @Autowired IPersonaRepository ipersonaRepository;
+    
     @Override
     public List<Persona> getPersona() {
-       List<Persona> persona = ipersonaRepository.findAll();
-       return persona;
+        List<Persona> persona = ipersonaRepository.findAll();
+        return persona;
     }
 
     @Override
     public void savePersona(Persona persona) {
-       ipersonaRepository.save(persona);
+        ipersonaRepository.save(persona);
     }
 
     @Override
@@ -32,4 +34,5 @@ public class ImpPersonaService implements IPersonaService{
         Persona persona = ipersonaRepository.findById(id).orElse(null);
         return persona;
     }
+    
 }

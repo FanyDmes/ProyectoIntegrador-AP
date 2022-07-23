@@ -26,9 +26,9 @@ public class Experiencia {
     public Experiencia(String nombreE, String descripcionE) {
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;
-            
     }
-     //Getter y Setter
+    
+    //Getters and setters
 
     public int getId() {
         return id;
@@ -53,5 +53,5 @@ public class Experiencia {
     public void setDescripcionE(String descripcionE) {
         this.descripcionE = descripcionE;
     }
-       
+    
 }

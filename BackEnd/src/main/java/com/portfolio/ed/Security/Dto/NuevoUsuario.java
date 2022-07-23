@@ -1,21 +1,25 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package com.portfolio.ed.Security.Dto;
 
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ *
+ * @author Usuario
+ */
 public class NuevoUsuario {
-
     private String nombre;
     private String nombreUsuario;
-    private String Email;
+    private String email;
     private String password;
     private Set<String> roles = new HashSet<>();
     
-    //Getter y Setter
+    //Gettes & Setters
 
     public String getNombre() {
         return nombre;
@@ -34,11 +38,11 @@ public class NuevoUsuario {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
-    public void setEmail(String Email) {
-        this.Email = Email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -57,6 +61,4 @@ public class NuevoUsuario {
         this.roles = roles;
     }
     
-    
-
 }
