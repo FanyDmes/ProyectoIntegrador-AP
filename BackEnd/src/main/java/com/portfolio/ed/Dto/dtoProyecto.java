@@ -13,15 +13,18 @@ public class dtoProyecto {
     private String nombrePro;
     @NotBlank
     private String descripcionPro;
+    @NotBlank
+    private String imgPro;
     
     //Constructor
 
     public dtoProyecto() {
     }
 
-    public dtoProyecto(String nombrePro, String descripcionPro) {
+    public dtoProyecto(String nombrePro, String descripcionPro, String imgPro) {
         this.nombrePro = nombrePro;
         this.descripcionPro = descripcionPro;
+        this.imgPro = imgPro;
     }
     
     //Getter y Setter
@@ -41,6 +44,16 @@ public class dtoProyecto {
     public void setDescripcionPro(String descripcionPro) {
         this.descripcionPro = descripcionPro;
     }
+
+    public String getImgPro() {
+        return imgPro;
+    }
+
+    public void setImgPro(String imgPro) {
+        this.imgPro = imgPro;
+    }
+
+    
     
     
 }

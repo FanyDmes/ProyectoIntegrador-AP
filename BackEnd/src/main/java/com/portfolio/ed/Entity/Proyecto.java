@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Proyecto {
@@ -19,15 +20,23 @@ public class Proyecto {
     private String nombrePro;
     private String descripcionPro;
     
+    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+    private String imgPro;
+
     //Constructor
 
     public Proyecto() {
     }
 
-    public Proyecto(String nombrePro, String descripcionPro) {
+    public Proyecto(String nombrePro, String descripcionPro, String imgPro) {
         this.nombrePro = nombrePro;
         this.descripcionPro = descripcionPro;
+        this.imgPro = imgPro;
     }
+
+    
+    
+    
     
     //Getter y Setter
 
@@ -54,6 +63,15 @@ public class Proyecto {
     public void setDescripcionPro(String descripcionPro) {
         this.descripcionPro = descripcionPro;
     }
+
+    public String getImgPro() {
+        return imgPro;
+    }
+
+    public void setImgPro(String imgPro) {
+        this.imgPro = imgPro;
+    }
+    
     
     
 }
