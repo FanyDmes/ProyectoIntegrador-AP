@@ -5,13 +5,14 @@ div{
     background-color: #b8a1cb;
     text-align: center;
 }
+
 /*Estilo de la foto de perfil*/
 @media (min-width: 576px){
     #fotodeperfil{
         position: absolute;
         width: 15%;
         border-radius: 100%;
-        box-shadow: 3px 3px 3px grey;
+        box-shadow: 3px 3px 3px  rgb(34, 25, 37);
         left: 3%;
         top:550px;
     }
@@ -21,14 +22,17 @@ div{
         position: absolute;
         width: 30%;
         border-radius: 100%;
-        box-shadow: 3px 3px 3px grey;
+        box-shadow: 3px 3px 3px rgb(34, 25, 37);
         left: 33%;
         top:950px;
     }
+
 }
 
 /*etiqueta nombre*/
 #nombre{
+    font-size: xx-large;
     font-weight: bold;
-    margin-top: 30%;
+    margin-top: auto;
 }
+
