@@ -1,14 +1,31 @@
 <div class="row">
     <h1>EDUCACIÓN</h1>
-    <div class="col-lg-1"></div>
-    <div class="col-lg-11">
-        <ul>
-            <li><h1>UTN Mar del plata</h1> - <h3>2006</h3></li>
-            <p>Curso completo de Reparación y armado de redes</p>
-        </ul>
-        <ul>
-            <li><h1>Argentina Programa</h1> - <h3>2021-2022</h3></li>
-            <p>Curso completo de Full Stack Develloper Jr.</p>
-        </ul>
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-dark" routerLink="/nuevaedu" *ngIf="isLogged">
+            Nueva Educacion
+        </button>
     </div>
+
+    <div class="col lg 1"></div>
+    <div class="col-lg-11">
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let Educacion of edu">
+                    <td>
+                        <h2>{{Educacion.nombreEdu}}</h2>
+                    </td>
+                    <td>{{Educacion.descripcionEdu}}</td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-light" routerLink="/editedu/{{Educacion.id}}">
+                            <i class="bi bi-pencil-fill"></i> EDITAR</button>
+                    </td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-danger" (click)="delete(Educacion.id)">
+                            <i class="bi bi-trash-fill"></i> BORRAR</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 </div>
