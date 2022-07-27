@@ -16,6 +16,7 @@ public class dtoProyecto {
     @NotBlank
     private String imgPro;
     
+    
     //Constructor
 
     public dtoProyecto() {

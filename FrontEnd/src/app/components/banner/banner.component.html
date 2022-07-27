@@ -1,3 +1,9 @@
 <div>
-    <img src="../../../assets/banner.jpg" alt="">
+    <tbody>
+        <tr *ngFor="let Banner of banner">
+            <td>
+                <img src={{Banner.imgBanner}} alt="imgBanner">
+            </td>
+        </tr>
+    </tbody>
 </div>

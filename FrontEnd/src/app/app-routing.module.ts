@@ -5,9 +5,13 @@ import { NewEducaionComponent } from './components/educacion/new-educacion.compo
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
 import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
 import { HomeComponent } from './components/home/home.component';
+import { EditHySComponent } from './components/hys/edit-hys.component';
+import { HySComponent } from './components/hys/hys.component';
+import { NewHySComponent } from './components/hys/new-hys.component';
 import { LoginComponent } from './components/login/login.component';
 import { EditProyectoComponent } from './components/proyecto/edit-proyecto.component';
 import { NewProyectoComponent } from './components/proyecto/new-proyecto.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,7 +21,9 @@ const routes: Routes = [
   { path: 'nuevaedu', component: NewEducaionComponent},
   { path: 'editedu/:id', component: EditEducacionComponent},
   { path: 'nuevopro', component: NewProyectoComponent},
-  { path: 'editpro/:id', component: EditProyectoComponent}
+  { path: 'editpro/:id', component: EditProyectoComponent},
+  { path: 'nuevahys', component: NewHySComponent},
+  { path: 'edithys/id', component: EditHySComponent}
 ];
 
 @NgModule({

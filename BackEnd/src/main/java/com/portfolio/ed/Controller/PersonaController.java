@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.portfolio.ed.Entity.Persona;
 import com.portfolio.ed.Interface.IPersonaService;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
+@RequestMapping("/personas")
 @CrossOrigin(origins = "http://localhost:4200")
 public class PersonaController {
     @Autowired IPersonaService ipersonaService;
@@ -46,12 +48,18 @@ public class PersonaController {
     public Persona editPersona(@PathVariable Long id,
                                @RequestParam("nombre") String nuevoNombre,
                                @RequestParam("apellido") String nuevoApellido,
-                               @RequestParam("img") String nuevoImg){
+                               @RequestParam("img") String nuevoImg,
+                               @RequestParam("descripcion") String nuevoDescripcion,
+                               @RequestParam("titulo") String nuevoTitulo){
+       
         Persona persona = ipersonaService.findPersona(id);
         
         persona.setNombre(nuevoNombre);
         persona.setApellido(nuevoApellido);
         persona.setImg(nuevoImg);
+        persona.setDescripcion(nuevoDescripcion);
+        persona.setTitulo(nuevoTitulo);
+        
         
         ipersonaService.savePersona(persona);
         return persona;

@@ -20,7 +20,7 @@ export class NewProyectoComponent implements OnInit {
   }
 
   onCreate(): void {
-    const pro = new Proyecto(this.nombrePro, this.descripcionPro);
+    const pro = new Proyecto(this.nombrePro, this.descripcionPro, this.imgPro);
     this.sProyecto.save(pro).subscribe(
       data => {
         alert("Proyecto añadido");
