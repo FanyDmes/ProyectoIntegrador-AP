@@ -9,14 +9,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import javax.validation.constraints.Size;
 
 @Entity
 public class HyS {
-   @Id
-   @GeneratedValue(strategy = GenerationType.AUTO)
-   
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+
     private String nombreHyS;
     private String descripcionHyS;
     @Size(min = 1, max = 50, message = "no cumple con la longitud")
@@ -33,9 +36,8 @@ public class HyS {
         this.imgHyS = imgHyS;
         this.porcentaje = porcentaje;
     }
-    
-    //G y S
 
+    //G y S
     public int getId() {
         return id;
     }
@@ -75,8 +77,5 @@ public class HyS {
     public void setPorcentaje(String porcentaje) {
         this.porcentaje = porcentaje;
     }
-    
-    
-
 
 }

@@ -1,9 +1,19 @@
 .row{
     padding: 20px;
 }
-div{
-    background-color: #b8a1cb;
+#edu{
+    margin-top: 3%;
+}
+#contenido{
+    font-family: "Open Sans", sans-serif;
+    color: #fff;  
+}
+#edit{
+    margin-left: 110%;
+}
+#borrar{
+    margin-left: 87%;
 }
 h1, h3{
-    display: inline;
+    margin-top: 5%;
 }

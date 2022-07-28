@@ -20,7 +20,7 @@ public class Proyecto {
     private String nombrePro;
     private String descripcionPro;
     
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+    @Size(min = 1, max = 500, message = "no cumple con la longitud")
     private String imgPro;
 
     //Constructor

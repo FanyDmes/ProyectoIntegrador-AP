@@ -20,7 +20,7 @@ export class EditHySComponent implements OnInit {
       data =>{
         this.hys = data;
       }, err =>{
-        alert("Error al modificar el proyecto");
+        alert("Error al modificar la habilidad");
         this.router.navigate(['']);
       }
     )
@@ -32,7 +32,7 @@ export class EditHySComponent implements OnInit {
       data => {
         this.router.navigate(['']);
       }, err =>{
-         alert("Error al modificar el proyecto");
+         alert("Error al modificar la habilidad");
          this.router.navigate(['']);
       }
     )

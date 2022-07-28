@@ -62,7 +62,7 @@ public class CHyS {
         if(sHyS.existsByNombreHyS(dtoexp.getNombreHyS()))
             return new ResponseEntity(new Mensaje("Esa habilidad ya existe"), HttpStatus.BAD_REQUEST);
         
-       HyS hys = new HyS(dtoexp.getNombreHyS(), dtoexp.getDescripcionHyS(), dtoexp.getImgHyS(), dtoexp.getporcentaje());
+       HyS hys = new HyS(dtoexp.getNombreHyS(), dtoexp.getDescripcionHyS(), dtoexp.getImgHyS(), dtoexp.getPorcentaje());
         sHyS.save(hys);
         
         return new ResponseEntity(new Mensaje("Habilidad agregada"), HttpStatus.OK);

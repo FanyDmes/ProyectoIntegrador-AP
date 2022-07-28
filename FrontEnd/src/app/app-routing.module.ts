@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EditAcercaComponent } from './components/acerca-de/edit-acerca-de.component';
+import { NewAcercaComponent } from './components/acerca-de/new-acerca-de.component';
 import { EditEducacionComponent } from './components/educacion/edit-educacion.component';
 import { NewEducaionComponent } from './components/educacion/new-educacion.component';
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
 import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
 import { HomeComponent } from './components/home/home.component';
 import { EditHySComponent } from './components/hys/edit-hys.component';
-import { HySComponent } from './components/hys/hys.component';
 import { NewHySComponent } from './components/hys/new-hys.component';
 import { LoginComponent } from './components/login/login.component';
 import { EditProyectoComponent } from './components/proyecto/edit-proyecto.component';
@@ -23,7 +24,9 @@ const routes: Routes = [
   { path: 'nuevopro', component: NewProyectoComponent},
   { path: 'editpro/:id', component: EditProyectoComponent},
   { path: 'nuevahys', component: NewHySComponent},
-  { path: 'edithys/id', component: EditHySComponent}
+  { path: 'edithys/:id', component: EditHySComponent},
+  { path: 'nuevoacerca', component: NewAcercaComponent},
+  { path: 'editacerca/:id', component: EditAcercaComponent}
 ];
 
 @NgModule({

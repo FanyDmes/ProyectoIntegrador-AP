@@ -1,18 +1,31 @@
 <div class="row">
     <tr *ngFor="let Acerca of acerca">
-        <div class="col-xs-0 col-sm-2 col-md-2 col-lg-2">
-            <img src={{Acerca.imgA}} class="img-fluid" id="fotodeperfil">
-        </div>
-        <div class="col-xs-0 col-sm-2 col-md-2 col-lg-8">
+        <img src={{Acerca.imgA}} class="img-fluid" id="fotodeperfil">
+
+        <div class="col-xs-0 col-sm-2 col-md-2 col-lg-3">
             <p id="nombre">{{Acerca.nombreA}}</p>
+            <td *ngIf="isLogged">
+                        <button class="btn btn-light" id="edit" routerLink="/editacerca/{{Acerca.id}}">
+                            <i class="bi bi-pencil-fill"></i> EDITAR</button>
+                    </td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-danger" id="borrar" (click)="delete(Acerca.id)">
+                            <i class="bi bi-trash-fill"></i> BORRAR</button>
+                    </td>
             <p id="titulo">{{Acerca.tituloA}}</p>
-       
-        
-            <span>
-                <h1>Acerca de mí</h1>
+        </div>
+        <div class="col-xs-12 col-sm-0 col-md-0 col-lg-0">
+
+            <span id="acerca">
+                <h1 class="fw-bold">Acerca de mí</h1>
+                <div class="col-lg-2" id="">
+                    <button type="button" class="btn btn-dark" routerLink="/nuevoacerca" *ngIf="isLogged">
+                        Nuevo contenido
+                    </button>
+                </div>
                 <p id="descripcion">{{Acerca.descripcionA}}</p>
             </span>
-         </div>
+        </div>
     </tr>
-   
-</div> 
+
+</div>

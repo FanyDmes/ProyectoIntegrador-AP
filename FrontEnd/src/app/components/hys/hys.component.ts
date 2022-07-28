@@ -34,7 +34,7 @@ hys: HyS[] = [];
         data => {
           this.cargarHyS();
         }, err => {
-          alert("No se pudo borrar el proyecto");
+          alert("No se pudo borrar la habilidad");
         }
       )
     }

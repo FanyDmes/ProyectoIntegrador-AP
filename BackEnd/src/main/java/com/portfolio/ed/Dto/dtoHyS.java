@@ -19,6 +19,8 @@ public class dtoHyS {
     private String porcentaje;
 
     //Constructor
+    
+   
     public dtoHyS() {
     }
 
@@ -58,12 +60,11 @@ public class dtoHyS {
         return porcentaje;
     }
 
+    
+
     public void setPorcentaje(String porcentaje) {
         this.porcentaje = porcentaje;
     }
 
-    public String getporcentaje() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 }
