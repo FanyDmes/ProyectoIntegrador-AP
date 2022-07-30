@@ -7,7 +7,7 @@ import { Footer } from '../model/footer';
   providedIn: 'root'
 })
 export class SFooterService {
-  expURL = 'http://localhost:8080/footer/';
+  expURL = 'https://apbackended.herokuapp.com/';
 
   constructor(private httpClient: HttpClient) { }
 

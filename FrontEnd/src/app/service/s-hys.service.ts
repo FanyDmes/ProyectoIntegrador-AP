@@ -7,7 +7,7 @@ import { HyS } from '../model/hys';
   providedIn: 'root'
 })
 export class SHySService {
-  expURL = 'http://localhost:8080/hys/';
+  expURL = 'https://apbackended.herokuapp.com/';
 
   constructor(private httpClient: HttpClient) { }
 

@@ -7,7 +7,7 @@ import { Logo } from '../model/logo';
   providedIn: 'root'
 })
 export class SLogoService {
-  expURL = 'http://localhost:8080/logo/';
+  expURL = 'https://apbackended.herokuapp.com/';
 
   constructor(private httpClient: HttpClient) { }
 

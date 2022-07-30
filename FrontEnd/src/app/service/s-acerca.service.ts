@@ -7,7 +7,7 @@ import { Acerca } from '../model/acerca';
   providedIn: 'root'
 })
 export class SAcercaService {
-  expURL = 'http://localhost:8080/acerca/';
+  expURL = 'https://apbackended.herokuapp.com/';
 
   constructor(private httpClient: HttpClient) { }
 

@@ -23,7 +23,7 @@ import com.portfolio.ed.Security.Entity.UsuarioPrincipal;
 @Component
 public class JwtProvider {
     private final static Logger logger = LoggerFactory.getLogger(JwtProvider.class);
-    
+    private static final long EXPIRE_DURATION=24*60*60*10000;//24
     @Value("${jwt.secret}")
     private String secret;
     @Value("${jwt.expiration}")
@@ -33,7 +33,6 @@ public class JwtProvider {
         UsuarioPrincipal usuarioPrincipal = (UsuarioPrincipal) authentication.getPrincipal();
         return Jwts.builder().setSubject(usuarioPrincipal.getUsername())
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(new Date().getTime()+expiration*1000))
                 .signWith(SignatureAlgorithm.HS512, secret)
                 .compact();
     }
