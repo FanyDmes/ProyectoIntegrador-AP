@@ -24,7 +24,7 @@ public class edApplication {
                     @Override
 			public void addCorsMappings(CorsRegistry registry) {
 
-				registry.addMapping("https://apbackended.herokuapp.com/").allowedOrigins("https://myportfolioap-8f133.web.app");
+				registry.addMapping("/**").allowedOrigins("https://myportfolioap-8f133.web.app");
 			}
                         		
 		};
@@ -33,7 +33,7 @@ public class edApplication {
 	public CorsFilter corsFilter() {
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
 		corsConfiguration.setAllowCredentials(true);
-		corsConfiguration.setAllowedOrigins(Arrays.asList("*"));
+		corsConfiguration.setAllowedOrigins(Arrays.asList("https://myportfolioap-8f133.web.app"));
 
                 corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
 				"Accept", "Authorization", "Origin, Accept", "X-Requested-With",
