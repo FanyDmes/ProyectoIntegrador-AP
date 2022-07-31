@@ -24,9 +24,9 @@ const routes: Routes = [
   { path: 'nuevopro', component: NewProyectoComponent},
   { path: 'editpro/:id', component: EditProyectoComponent},
   { path: 'nuevahys', component: NewHySComponent},
-  { path: 'edithys/:id', component: EditHySComponent},
   { path: 'nuevoacerca', component: NewAcercaComponent},
-  { path: 'editacerca/:id', component: EditAcercaComponent}
+  { path: 'editacerca/:id', component: EditAcercaComponent},
+  { path: 'edithys/:id', component: EditHySComponent},
 ];
 
 @NgModule({

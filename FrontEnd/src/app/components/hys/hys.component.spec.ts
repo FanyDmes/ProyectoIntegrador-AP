@@ -1,25 +1,46 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, OnInit } from '@angular/core';
+import { HyS } from 'src/app/model/hys';
+import { TokenService } from 'src/app/service/token.service';
+import { SHySService } from 'src/app/service/s-hys.service'; 
 
-import { HysComponent } from './hys.component';
+@Component({
+  selector: 'app-hys',
+  templateUrl: './hys.component.html',
+  styleUrls: ['./hys.component.css']
+})
 
-describe('HysComponent', () => {
-  let component: HysComponent;
-  let fixture: ComponentFixture<HysComponent>;
+export class HysComponent implements OnInit {
+  hys: HyS[] = [];
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ HysComponent ]
-    })
-    .compileComponents();
-  });
+  constructor(private sHyS: SHySService, private tokenService: TokenService) { }
+  isLogged = false;
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HysComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  ngOnInit(): void {
+    this.cargarHyS();
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+  }
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+  cargarHyS(): void {
+    this.sHyS.lista().subscribe(
+      data => {
+        this.hys = data;
+      }
+    )
+  }
+
+  delete(id?: number) {
+    if (id != undefined) {
+      this.sHyS.delete(id).subscribe(
+        data => {
+          this.cargarHyS();
+        }, err => {
+          alert("No se pudo eliminar");
+        }
+      )
+    }
+  }
+}

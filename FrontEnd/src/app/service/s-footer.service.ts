@@ -7,27 +7,27 @@ import { Footer } from '../model/footer';
   providedIn: 'root'
 })
 export class SFooterService {
-  expURL = 'https://backendedap.herokuapp.com/';
+  footerURL = 'https://backendedap.herokuapp.com/';
 
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Footer[]>{
-    return this.httpClient.get<Footer[]>(this.expURL + 'lista');
+    return this.httpClient.get<Footer[]>(this.footerURL + 'lista');
   }
 
   public detail(id: number): Observable<Footer>{
-    return this.httpClient.get<Footer>(this.expURL + `detail/${id}`);
+    return this.httpClient.get<Footer>(this.footerURL + `detail/${id}`);
   } 
 
   public save(footer: Footer): Observable<any>{
-    return this.httpClient.post<any>(this.expURL + 'create', footer);
+    return this.httpClient.post<any>(this.footerURL + 'create', footer);
   }
 
   public update(id: number, footer: Footer): Observable<any>{
-    return this.httpClient.put<any>(this.expURL + `update/${id}`, footer);
+    return this.httpClient.put<any>(this.footerURL + `update/${id}`, footer);
   }
 
   public delete(id: number): Observable<any>{
-    return this.httpClient.delete<any>(this.expURL + `delete/${id}`);
+    return this.httpClient.delete<any>(this.footerURL + `delete/${id}`);
   }
 }

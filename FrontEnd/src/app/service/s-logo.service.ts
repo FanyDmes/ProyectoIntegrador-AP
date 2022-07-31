@@ -7,27 +7,27 @@ import { Logo } from '../model/logo';
   providedIn: 'root'
 })
 export class SLogoService {
-  expURL = 'https://backendedap.herokuapp.com/';
+  logoURL = 'https://backendedap.herokuapp.com/';
 
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Logo[]>{
-    return this.httpClient.get<Logo[]>(this.expURL + 'lista');
+    return this.httpClient.get<Logo[]>(this.logoURL + 'lista');
   }
 
   public detail(id: number): Observable<Logo>{
-    return this.httpClient.get<Logo>(this.expURL + `detail/${id}`);
+    return this.httpClient.get<Logo>(this.logoURL + `detail/${id}`);
   } 
 
   public save(logo: Logo): Observable<any>{
-    return this.httpClient.post<any>(this.expURL + 'create', logo);
+    return this.httpClient.post<any>(this.logoURL + 'create', logo);
   }
 
   public update(id: number, logo: Logo): Observable<any>{
-    return this.httpClient.put<any>(this.expURL + `update/${id}`, logo);
+    return this.httpClient.put<any>(this.logoURL + `update/${id}`, logo);
   }
 
   public delete(id: number): Observable<any>{
-    return this.httpClient.delete<any>(this.expURL + `delete/${id}`);
+    return this.httpClient.delete<any>(this.logoURL + `delete/${id}`);
   }
 }
