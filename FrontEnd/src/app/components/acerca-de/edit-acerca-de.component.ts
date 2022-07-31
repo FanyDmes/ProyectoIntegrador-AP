@@ -9,7 +9,7 @@ import { SAcercaService } from 'src/app/service/s-acerca.service';
   styleUrls: ['./edit-acerca-de.component.css']
 })
 export class EditAcercaComponent implements OnInit {
-  acerca: Acerca = null;
+  aceLab: Acerca = null;
     
 
   constructor(private sAcerca: SAcercaService, private activatedRouter: ActivatedRoute,private router: Router) { }
@@ -18,7 +18,7 @@ export class EditAcercaComponent implements OnInit {
     const id = this.activatedRouter.snapshot.params['id'];
     this.sAcerca.detail(id).subscribe(
       data =>{
-        this.acerca = data;
+        this.aceLab = data;
       }, err =>{
         alert("Error al modificar el contenido");
         this.router.navigate(['']);
@@ -28,7 +28,7 @@ export class EditAcercaComponent implements OnInit {
 
   onUpdate(): void{
     const id = this.activatedRouter.snapshot.params['id'];
-    this.sAcerca.update(id, this.acerca).subscribe(
+    this.sAcerca.update(id, this.aceLab).subscribe(
       data => {
         this.router.navigate(['']);
       }, err =>{

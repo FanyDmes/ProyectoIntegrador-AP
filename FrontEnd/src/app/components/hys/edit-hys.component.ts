@@ -9,7 +9,7 @@ import { SHySService } from 'src/app/service/s-hys.service';
   styleUrls: ['./edit-hys.component.css']
 })
 export class EditHySComponent implements OnInit {
-  hys: HyS = null;
+  hysLab: HyS = null;
 
   constructor(private sHyS: SHySService, private activatedRouter: ActivatedRoute,
     private router: Router) { }
@@ -18,7 +18,7 @@ export class EditHySComponent implements OnInit {
     const id = this.activatedRouter.snapshot.params['id'];
     this.sHyS.detail(id).subscribe(
       data =>{
-        this.hys = data;
+        this.hysLab = data;
       }, err =>{
         alert("Error al modificar la habilidad");
         this.router.navigate(['']);
@@ -28,7 +28,7 @@ export class EditHySComponent implements OnInit {
 
   onUpdate(): void{
     const id = this.activatedRouter.snapshot.params['id'];
-    this.sHyS.update(id, this.hys).subscribe(
+    this.sHyS.update(id, this.hysLab).subscribe(
       data => {
         this.router.navigate(['']);
       }, err =>{

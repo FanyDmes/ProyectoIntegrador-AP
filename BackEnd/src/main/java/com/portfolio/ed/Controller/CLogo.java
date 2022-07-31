@@ -25,8 +25,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/logo")
-@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/loglab")
+@CrossOrigin(origins = "https://myportfolioap-8f133.web.app")
 
 public class CLogo {
     @Autowired

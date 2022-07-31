@@ -29,6 +29,7 @@ import { EditAcercaComponent } from './components/acerca-de/edit-acerca-de.compo
 import { HySComponent } from './components/hys/hys.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,9 @@ import { HySComponent } from './components/hys/hys.component';
     EditHySComponent,
     NewAcercaComponent,
     EditAcercaComponent,
-    HySComponent
+    HySComponent,
+
+  
 
   ],
   imports: [

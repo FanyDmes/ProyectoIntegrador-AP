@@ -1,25 +1,42 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, OnInit } from '@angular/core';
+import { Banner } from 'src/app/model/banner';
+import { SBannerService } from 'src/app/service/s-banner.service';
+import { TokenService } from 'src/app/service/token.service';
+ 
+@Component({
+  selector: 'app-banner',
+  templateUrl: './banner.component.html',
+  styleUrls: ['./banner.component.css']
+})
+export class BannerComponent implements OnInit {
+  
+  banner: Banner[] = [];
+  
+  constructor(private sBanner: SBannerService ,private tokenService: TokenService) { }
+  
+  isLogged = false;
+  ngOnInit(): void {
+    this.cargarBanner();
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+  }
 
-import { BannerComponent } from './banner.component';
+  cargarBanner(): void {
+    this.sBanner.lista().subscribe(data => { this.banner = data; })
+  }
 
-describe('BannerComponent', () => {
-  let component: BannerComponent;
-  let fixture: ComponentFixture<BannerComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ BannerComponent ]
-    })
-    .compileComponents();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(BannerComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+  delete(id?: number){
+    if(id != undefined){
+      this.sBanner.delete(id).subscribe(
+        data => {
+          this.cargarBanner();
+        }, err => {
+          alert("No se pudo borrar");
+        }
+      )
+    }
+  }
+}

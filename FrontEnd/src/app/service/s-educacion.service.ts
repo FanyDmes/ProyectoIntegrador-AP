@@ -7,27 +7,27 @@ import { Educacion } from '../model/educacion';
   providedIn: 'root'
 })
 export class SEducacionService {
-  expURL = 'https://apbackended.herokuapp.com/';
+  eduURL = 'https://backendedap.herokuapp.com/';
 
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Educacion[]>{
-    return this.httpClient.get<Educacion[]>(this.expURL + 'lista');
+    return this.httpClient.get<Educacion[]>(this.eduURL + 'lista');
   }
 
   public detail(id: number): Observable<Educacion>{
-    return this.httpClient.get<Educacion>(this.expURL + `detail/${id}`);
+    return this.httpClient.get<Educacion>(this.eduURL + `detail/${id}`);
   } 
 
   public save(educacion: Educacion): Observable<any>{
-    return this.httpClient.post<any>(this.expURL + 'create', educacion);
+    return this.httpClient.post<any>(this.eduURL + 'create', educacion);
   }
 
   public update(id: number, educacion: Educacion): Observable<any>{
-    return this.httpClient.put<any>(this.expURL + `update/${id}`, educacion);
+    return this.httpClient.put<any>(this.eduURL + `update/${id}`, educacion);
   }
 
   public delete(id: number): Observable<any>{
-    return this.httpClient.delete<any>(this.expURL + `delete/${id}`);
+    return this.httpClient.delete<any>(this.eduURL + `delete/${id}`);
   }
 }

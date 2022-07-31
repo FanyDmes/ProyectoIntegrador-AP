@@ -7,27 +7,27 @@ import { Proyecto } from '../model/proyecto';
   providedIn: 'root'
 })
 export class SProyectoService {
-  expURL = 'https://apbackended.herokuapp.com/';
+  proURL = 'https://backendedap.herokuapp.com/';
 
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Proyecto[]>{
-    return this.httpClient.get<Proyecto[]>(this.expURL + 'lista');
+    return this.httpClient.get<Proyecto[]>(this.proURL + 'lista');
   }
 
   public detail(id: number): Observable<Proyecto>{
-    return this.httpClient.get<Proyecto>(this.expURL + `detail/${id}`);
+    return this.httpClient.get<Proyecto>(this.proURL + `detail/${id}`);
   } 
 
   public save(proyecto: Proyecto): Observable<any>{
-    return this.httpClient.post<any>(this.expURL + 'create', proyecto);
+    return this.httpClient.post<any>(this.proURL + 'create', proyecto);
   }
 
   public update(id: number, proyecto: Proyecto): Observable<any>{
-    return this.httpClient.put<any>(this.expURL + `update/${id}`, proyecto);
+    return this.httpClient.put<any>(this.proURL + `update/${id}`, proyecto);
   }
 
   public delete(id: number): Observable<any>{
-    return this.httpClient.delete<any>(this.expURL + `delete/${id}`);
+    return this.httpClient.delete<any>(this.proURL + `delete/${id}`);
   }
 }

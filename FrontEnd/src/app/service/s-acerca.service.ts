@@ -7,27 +7,27 @@ import { Acerca } from '../model/acerca';
   providedIn: 'root'
 })
 export class SAcercaService {
-  expURL = 'https://apbackended.herokuapp.com/';
+  acercaURL = 'https://backendedap.herokuapp.com/';
 
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Acerca[]>{
-    return this.httpClient.get<Acerca[]>(this.expURL + 'lista');
+    return this.httpClient.get<Acerca[]>(this.acercaURL + 'lista');
   }
 
   public detail(id: number): Observable<Acerca>{
-    return this.httpClient.get<Acerca>(this.expURL + `detail/${id}`);
+    return this.httpClient.get<Acerca>(this.acercaURL + `detail/${id}`);
   } 
 
   public save(acerca: Acerca): Observable<any>{
-    return this.httpClient.post<any>(this.expURL + 'create', acerca);
+    return this.httpClient.post<any>(this.acercaURL + 'create', acerca);
   }
 
   public update(id: number, acerca: Acerca): Observable<any>{
-    return this.httpClient.put<any>(this.expURL + `update/${id}`, acerca);
+    return this.httpClient.put<any>(this.acercaURL + `update/${id}`, acerca);
   }
 
   public delete(id: number): Observable<any>{
-    return this.httpClient.delete<any>(this.expURL + `delete/${id}`);
+    return this.httpClient.delete<any>(this.acercaURL + `delete/${id}`);
   }
 }

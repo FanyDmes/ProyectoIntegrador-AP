@@ -7,27 +7,27 @@ import { Banner } from '../model/banner';
   providedIn: 'root'
 })
 export class SBannerService {
-  expURL = 'https://apbackended.herokuapp.com/';
+  bannerURL = 'https://backendedap.herokuapp.com/';
 
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Banner[]>{
-    return this.httpClient.get<Banner[]>(this.expURL + 'lista');
+    return this.httpClient.get<Banner[]>(this.bannerURL + 'lista');
   }
 
   public detail(id: number): Observable<Banner>{
-    return this.httpClient.get<Banner>(this.expURL + `detail/${id}`);
+    return this.httpClient.get<Banner>(this.bannerURL + `detail/${id}`);
   } 
 
   public save(banner: Banner): Observable<any>{
-    return this.httpClient.post<any>(this.expURL + 'create', banner);
+    return this.httpClient.post<any>(this.bannerURL + 'create', banner);
   }
 
   public update(id: number, banner: Banner): Observable<any>{
-    return this.httpClient.put<any>(this.expURL + `update/${id}`, banner);
+    return this.httpClient.put<any>(this.bannerURL + `update/${id}`, banner);
   }
 
   public delete(id: number): Observable<any>{
-    return this.httpClient.delete<any>(this.expURL + `delete/${id}`);
+    return this.httpClient.delete<any>(this.bannerURL + `delete/${id}`);
   }
 }

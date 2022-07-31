@@ -9,13 +9,13 @@ import { TokenService } from 'src/app/service/token.service';
   styleUrls: ['./banner.component.css']
 })
 export class BannerComponent implements OnInit {
-banner: Banner[] = [];
+banner: Banner[] = []
 
   constructor(private sBanner: SBannerService, private tokenService: TokenService ) { }
    
   isLogged = false;
 
-  
+
   ngOnInit(): void {
     this.cargarBanner();
     if (this.tokenService.getToken()) {
@@ -27,7 +27,7 @@ banner: Banner[] = [];
 
   cargarBanner(): void {
     this.sBanner.lista().subscribe(data => { this.banner = data; })
-  }
+}
 
   delete(id?: number){
     if(id != undefined){
@@ -35,7 +35,7 @@ banner: Banner[] = [];
         data => {
           this.cargarBanner();
         }, err => {
-          alert("No se pudo borrar el banner");
+          alert("No se pudo borrar la experiencia");
         }
       )
     }

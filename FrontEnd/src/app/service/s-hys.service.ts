@@ -7,27 +7,27 @@ import { HyS } from '../model/hys';
   providedIn: 'root'
 })
 export class SHySService {
-  expURL = 'https://apbackended.herokuapp.com/';
+  hysURL = 'https://backendedap.herokuapp.com/';
 
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<HyS[]>{
-    return this.httpClient.get<HyS[]>(this.expURL + 'lista');
+    return this.httpClient.get<HyS[]>(this.hysURL + 'lista');
   }
 
   public detail(id: number): Observable<HyS>{
-    return this.httpClient.get<HyS>(this.expURL + `detail/${id}`);
+    return this.httpClient.get<HyS>(this.hysURL + `detail/${id}`);
   } 
 
   public save(hys: HyS): Observable<any>{
-    return this.httpClient.post<any>(this.expURL + 'create', hys);
+    return this.httpClient.post<any>(this.hysURL + 'create', hys);
   }
 
   public update(id: number, hys: HyS): Observable<any>{
-    return this.httpClient.put<any>(this.expURL + `update/${id}`, hys);
+    return this.httpClient.put<any>(this.hysURL + `update/${id}`, hys);
   }
 
   public delete(id: number): Observable<any>{
-    return this.httpClient.delete<any>(this.expURL + `delete/${id}`);
+    return this.httpClient.delete<any>(this.hysURL + `delete/${id}`);
   }
 }
