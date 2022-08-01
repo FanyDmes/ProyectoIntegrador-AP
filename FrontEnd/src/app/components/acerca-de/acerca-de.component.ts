@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Acerca } from 'src/app/model/acerca';
-
-
+import { HttpErrorResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 import { TokenService } from 'src/app/service/token.service';
-import { SAcercaService} from 'src/app/service/s-acerca.service'
+import { SAcercaService} from 'src/app/service/s-acerca.service';
 
 @Component({
   selector: 'app-acerca-de',
   templateUrl: './acerca-de.component.html',
   styleUrls: ['./acerca-de.component.css']
 })
-export class AcercaDeComponent implements OnInit {
-  
-  acerca: Acerca[] = [];
-  
-  constructor(private sAcerca: SAcercaService ,private tokenService: TokenService) { }
-  
+export class AcercaComponent implements OnInit {
+  acerlab: Acerca[] = [];
+
+  constructor(private sAcerca: SAcercaService, private tokenService: TokenService) { }
+
   isLogged = false;
+
   ngOnInit(): void {
     this.cargarAcerca();
     if (this.tokenService.getToken()) {
@@ -27,7 +27,7 @@ export class AcercaDeComponent implements OnInit {
   }
 
   cargarAcerca(): void {
-    this.sAcerca.lista().subscribe(data => { this.acerca = data; })
+    this.sAcerca.lista().subscribe(data => { this.acerlab = data; })
   }
 
   delete(id?: number){
@@ -36,7 +36,7 @@ export class AcercaDeComponent implements OnInit {
         data => {
           this.cargarAcerca();
         }, err => {
-          alert("No se pudo borrar");
+          alert("No se pudo borrar.");
         }
       )
     }

@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { LogoAPComponent } from './components/logo-ap/logo-ap.component';
 import { BannerComponent } from './components/banner/banner.component';
-import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
+import { AcercaComponent } from './components/acerca-de/acerca-de.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { ProyectoComponent } from './components/proyecto/proyecto.component';
@@ -36,7 +36,7 @@ import { HySComponent } from './components/hys/hys.component';
     HeaderComponent,
     LogoAPComponent,
     BannerComponent,
-    AcercaDeComponent,
+    AcercaComponent,
     ExperienciaComponent,
     EducacionComponent,
     ProyectoComponent,

@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/prolab")
-@CrossOrigin(origins = "https://myportfolioap-8f133.web.app")
+@CrossOrigin(origins = "https://myportfolioap-8f133.web.app/")
 public class CProyecto {
     @Autowired
     SProyecto sProyecto;

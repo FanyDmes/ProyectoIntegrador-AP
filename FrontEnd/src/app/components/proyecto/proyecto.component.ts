@@ -3,16 +3,19 @@ import { Proyecto } from 'src/app/model/proyecto';
 import { TokenService } from 'src/app/service/token.service';
 import { SProyectoService} from 'src/app/service/s-proyecto.service'
 
+
 @Component({
   selector: 'app-proyecto',
   templateUrl: './proyecto.component.html',
   styleUrls: ['./proyecto.component.css']
 })
 export class ProyectoComponent implements OnInit {
-pro: Proyecto[] = [];
+  prolab: Proyecto[] = [];
+
 
   constructor(private sProyecto: SProyectoService, private tokenService: TokenService) { }
-   
+
+ 
   isLogged = false;
 
   ngOnInit(): void {
@@ -25,7 +28,7 @@ pro: Proyecto[] = [];
   }
 
   cargarProyecto(): void {
-    this.sProyecto.lista().subscribe(data => { this.pro = data; })
+    this.sProyecto.lista().subscribe(data => { this.prolab = data; })
   }
 
   delete(id?: number){
@@ -34,7 +37,7 @@ pro: Proyecto[] = [];
         data => {
           this.cargarProyecto();
         }, err => {
-          alert("No se pudo borrar el proyecto");
+          alert("No se pudo borrar");
         }
       )
     }

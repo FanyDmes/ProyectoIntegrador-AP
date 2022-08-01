@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion';
 import { SEducacionService } from 'src/app/service/s-educacion.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-educacion',
