@@ -7,7 +7,7 @@ import { Acerca } from '../model/acerca';
   providedIn: 'root'
 })
 export class SAcercaService {
-  aceURL = 'https://backendedap.herokuapp.com/';
+  aceURL = 'https://backendedap.herokuapp.com/acelab/';
 
   constructor(private httpClient: HttpClient) { }
 
